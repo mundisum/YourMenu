@@ -9,5 +9,7 @@
     <string name="button_create_account">Create account</string>
     <string name="button_start_menu">Start looking at the menu</string>
     <string name="text_click_to">Click to</string>
+    <string name="text_search_from">Search from</string>
+    <string name="button_all_restaurants">All restaurants</string>
 
 </resources>

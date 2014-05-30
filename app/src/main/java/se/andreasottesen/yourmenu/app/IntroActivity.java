@@ -50,7 +50,7 @@ public class IntroActivity extends ActionBarActivity {
 
     }
 
-    public void setBtnCreateAccountClick(View view){
+    public void btnCreateAccountClick(View view){
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
     }

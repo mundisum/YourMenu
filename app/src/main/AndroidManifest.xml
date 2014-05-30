@@ -29,7 +29,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="se.andreasottesen.yourmenu.app.LoginActivity"
+            android:name="se.andreasottesen.yourmenu.app.account.LoginActivity"
             android:label="@string/title_activity_login"
             android:windowSoftInputMode="adjustResize|stateHidden" >
         </activity>
