@@ -41,5 +41,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/btnAllRestaurants"
         android:text="@string/button_all_restaurants"
-        android:background="#ffffff" />
+        android:background="#ffffff"
+        android:onClick="btnAllRestaurantsClick"/>
 </LinearLayout>

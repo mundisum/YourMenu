@@ -3,7 +3,7 @@ package se.andreasottesen.yourmenu.app;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-
+import android.view.View;
 
 
 /**
@@ -78,5 +78,10 @@ public class ItemListActivity extends FragmentActivity
             detailIntent.putExtra(ItemDetailFragment.ARG_ITEM_ID, id);
             startActivity(detailIntent);
         }
+    }
+
+    public void btnAllRestaurantsClick(View view){
+        Intent intent = new Intent(this, AllRestaurantsActivity.class);
+        startActivity(intent);
     }
 }

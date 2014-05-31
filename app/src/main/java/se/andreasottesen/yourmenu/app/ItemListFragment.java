@@ -8,7 +8,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 
-import se.andreasottesen.yourmenu.app.restaurant.RestaurantContent;
+import se.andreasottesen.yourmenu.app.restaurant.ItemContent;
+import se.andreasottesen.yourmenu.app.restaurant.ItemListAdapter;
 
 /**
  * A list fragment representing a list of Items. This fragment
@@ -37,6 +38,8 @@ public class ItemListFragment extends ListFragment {
      * The current activated item position. Only used on tablets.
      */
     private int mActivatedPosition = ListView.INVALID_POSITION;
+
+    private ItemListAdapter itemListAdapter;
 
     /**
      * A callback interface that all activities containing this fragment must
@@ -71,12 +74,8 @@ public class ItemListFragment extends ListFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // TODO: replace with a real list adapter.
-        setListAdapter(new ArrayAdapter<RestaurantContent.RestaurantItem>(
-                getActivity(),
-                android.R.layout.simple_list_item_activated_1,
-                android.R.id.text1,
-                RestaurantContent.ITEMS));
+        itemListAdapter = new ItemListAdapter(getActivity(), ItemContent.ITEMS);
+        setListAdapter(itemListAdapter);
     }
 
     @Override
@@ -116,7 +115,7 @@ public class ItemListFragment extends ListFragment {
 
         // Notify the active callbacks interface (the activity, if the
         // fragment is attached to one) that an item has been selected.
-        mCallbacks.onItemSelected(RestaurantContent.ITEMS.get(position).id);
+        mCallbacks.onItemSelected(ItemContent.ITEMS.get(position).id);
     }
 
     @Override

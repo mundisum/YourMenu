@@ -11,5 +11,6 @@
     <string name="text_click_to">Click to</string>
     <string name="text_search_from">Search from</string>
     <string name="button_all_restaurants">All restaurants</string>
+    <string name="title_activity_all_restaurants">AllRestaurantsActivity</string>
 
 </resources>
