@@ -22,6 +22,8 @@ public class IntroActivity extends ActionBarActivity {
 
         btnStartMenu = (Button) findViewById(R.id.btnStartMenu);
         btnCreateAccount = (Button) findViewById(R.id.btnCreateAccount);
+
+        getActionBar().hide();
     }
 
     @Override

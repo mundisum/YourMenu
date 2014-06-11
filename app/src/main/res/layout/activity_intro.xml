@@ -3,7 +3,8 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="#ffffff">
+    android:background="#ffffff"
+    android:weightSum="1">
 
     <ImageView
         android:layout_width="fill_parent"
@@ -14,19 +15,25 @@
         android:src="@drawable/ic_header" />
 
     <ImageView
-        android:layout_width="fill_parent"
+        android:layout_width="344dp"
         android:layout_height="wrap_content"
         android:id="@+id/imageView2"
         android:src="@drawable/ic_ingres"
         android:layout_marginTop="34dp"
-        android:scaleType="fitCenter" />
+        android:scaleType="fitCenter"
+        android:layout_weight="0.19"
+        android:layout_gravity="center_horizontal" />
 
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/text_click_to"
         android:id="@+id/txtClickTo"
-        android:layout_marginTop="43dp" />
+        android:layout_marginTop="43dp"
+        android:gravity="center_horizontal"
+        android:textSize="10dp"
+        android:textIsSelectable="false"
+        android:textColor="#a31e2a" />
 
     <Button
         android:layout_width="fill_parent"
@@ -37,7 +44,8 @@
         android:layout_centerHorizontal="true"
         android:onClick="btnStartMenuClick"
         android:background="#ffffff"
-        android:textSize="25dp" />
+        android:textSize="25dp"
+        android:minHeight="0dp" />
 
     <Button
         android:layout_width="fill_parent"
@@ -49,6 +57,7 @@
         android:singleLine="false"
         android:onClick="btnCreateAccountClick"
         android:background="#ffffff"
-        android:textSize="15dp" />
+        android:textSize="15dp"
+        android:textColor="#a72935" />
 
 </LinearLayout>

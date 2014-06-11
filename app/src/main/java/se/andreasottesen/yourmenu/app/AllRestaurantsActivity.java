@@ -3,6 +3,7 @@ package se.andreasottesen.yourmenu.app;
 import android.app.Activity;
 import android.app.ActionBar;
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -60,5 +61,10 @@ public class AllRestaurantsActivity extends Activity {
             View rootView = inflater.inflate(R.layout.fragment_all_restaurants, container, false);
             return rootView;
         }
+    }
+
+    public void btnShowMapClick(View view){
+        Intent intent = new Intent(this, RestaurantsMapActivity.class);
+        startActivity(intent);
     }
 }

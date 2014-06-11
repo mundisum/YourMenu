@@ -9,8 +9,18 @@
     tools:context="se.andreasottesen.yourmenu.app.AllRestaurantsActivity$PlaceholderFragment">
 
     <TextView
-        android:text="@string/hello_world"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="All restaurants"
+        android:id="@+id/txtAllRestaurants" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageButton"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_header"
+        android:onClick="btnShowMapClick" />
 
 </RelativeLayout>

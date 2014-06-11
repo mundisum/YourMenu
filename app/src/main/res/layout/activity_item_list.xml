@@ -3,38 +3,41 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="#ffffff"
+    android:background="#E8E8E8"
     android:weightSum="1">
 
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/text_search_from"
-        android:id="@+id/txtSearchFrom" />
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/text_search_from"
+    android:id="@+id/txtSearchFrom"
+        android:textStyle="bold" />
 
     <Spinner
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/spinLocations" />
+        android:id="@+id/spinLocations"
+        android:spinnerMode="dialog" />
 
     <ImageView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="263dp"
+        android:layout_height="79dp"
         android:id="@+id/imageView"
-        android:src="@drawable/ic_header" />
+        android:src="@drawable/logo_gray"
+        android:layout_gravity="center_horizontal" />
 
     <fragment xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/item_list"
         android:name="se.andreasottesen.yourmenu.app.ItemListFragment"
         android:layout_width="match_parent"
-        android:layout_height="279dp"
+        android:layout_height="170dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         tools:context="se.andreasottesen.yourmenu.app.ItemListActivity"
         tools:layout="@android:layout/list_content"
-        android:layout_weight="1.19" />
+        android:layout_weight="1" />
 
     <Button
         android:layout_width="fill_parent"
@@ -42,5 +45,8 @@
         android:id="@+id/btnAllRestaurants"
         android:text="@string/button_all_restaurants"
         android:background="#ffffff"
-        android:onClick="btnAllRestaurantsClick"/>
+        android:onClick="btnAllRestaurantsClick"
+        android:minHeight="0dp"
+        android:textStyle="bold"
+        android:textSize="16dp" />
 </LinearLayout>
