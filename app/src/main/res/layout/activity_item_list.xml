@@ -1,43 +1,51 @@
-<LinearLayout
-    android:orientation="vertical"
+<RelativeLayout
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:background="#E8E8E8"
-    android:weightSum="1">
-
+    android:padding="10dp">
 
     <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="@string/text_search_from"
-    android:id="@+id/txtSearchFrom"
-        android:textStyle="bold" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_search_from"
+        android:id="@+id/txtSearchFrom"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Spinner
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/spinLocations"
-        android:spinnerMode="dialog" />
+        android:spinnerMode="dropdown"
+        android:layout_below="@+id/txtSearchFrom"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:entries="@array/test_location_list" />
 
     <ImageView
         android:layout_width="263dp"
         android:layout_height="79dp"
         android:id="@+id/imageView"
         android:src="@drawable/logo_gray"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/spinLocations"
+        android:layout_centerHorizontal="true" />
 
     <fragment xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/item_list"
         android:name="se.andreasottesen.yourmenu.app.ItemListFragment"
         android:layout_width="match_parent"
-        android:layout_height="170dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_height="wrap_content"
         tools:context="se.andreasottesen.yourmenu.app.ItemListActivity"
         tools:layout="@android:layout/list_content"
-        android:layout_weight="1" />
+        android:layout_above="@+id/btnAllRestaurants"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/imageView" />
 
     <Button
         android:layout_width="fill_parent"
@@ -48,5 +56,9 @@
         android:onClick="btnAllRestaurantsClick"
         android:minHeight="0dp"
         android:textStyle="bold"
-        android:textSize="16dp" />
-</LinearLayout>
+        android:textSize="16dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>

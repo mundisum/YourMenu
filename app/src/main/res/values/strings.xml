@@ -13,4 +13,8 @@
     <string name="title_activity_all_restaurants">AllRestaurantsActivity</string>
     <string name="title_activity_restaurants_map">RestaurantsMapActivity</string>
 
+    <string-array name="test_location_list">
+        <item>Current location</item>
+    </string-array>
+
 </resources>

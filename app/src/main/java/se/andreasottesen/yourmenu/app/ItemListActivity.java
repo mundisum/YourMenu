@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 
 /**
@@ -23,13 +26,15 @@ import android.view.View;
  * to listen for item selections.
  */
 public class ItemListActivity extends FragmentActivity
-        implements ItemListFragment.Callbacks {
+        implements ItemListFragment.Callbacks, AdapterView.OnItemSelectedListener {
 
     /**
      * Whether or not the activity is in two-pane mode, i.e. running on a tablet
      * device.
      */
     private boolean mTwoPane;
+
+    private Spinner spinLocations;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +56,26 @@ public class ItemListActivity extends FragmentActivity
         }
 
         // TODO: If exposing deep links into your app, handle intents here.
+
+        spinLocations = (Spinner) findViewById(R.id.spinLocations);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.test_location_list, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinLocations.setAdapter(adapter);
+        spinLocations.setOnItemSelectedListener(this);
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        if (position >= 1)
+        {
+            Intent intent = new Intent(parent.getContext(), RestaurantsMapActivity.class);
+            startActivity(intent);
+        }
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
     }
 
     /**
