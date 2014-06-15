@@ -1,63 +1,67 @@
-<LinearLayout
-    android:orientation="vertical"
+<RelativeLayout
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="#ffffff"
-    android:weightSum="1">
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <ImageView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/imageView"
+        android:src="@drawable/ic_header"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/ic_header" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <ImageView
         android:layout_width="344dp"
         android:layout_height="wrap_content"
         android:id="@+id/imageView2"
         android:src="@drawable/ic_ingres"
-        android:layout_marginTop="34dp"
         android:scaleType="fitCenter"
         android:layout_weight="0.19"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="100dp" />
 
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/text_click_to"
         android:id="@+id/txtClickTo"
-        android:layout_marginTop="43dp"
         android:gravity="center_horizontal"
         android:textSize="10dp"
         android:textIsSelectable="false"
-        android:textColor="#a31e2a" />
+        android:textColor="#a31e2a"
+        android:layout_below="@+id/imageView2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/button_start_menu"
         android:id="@+id/btnStartMenu"
-        android:layout_below="@+id/txtClickTo"
-        android:layout_centerHorizontal="true"
         android:onClick="btnStartMenuClick"
         android:background="#ffffff"
         android:textSize="25dp"
-        android:minHeight="0dp" />
+        android:minHeight="0dp"
+        android:layout_below="@+id/txtClickTo"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/button_create_account"
         android:id="@+id/btnCreateAccount"
-        android:layout_below="@+id/btnStartMenu"
-        android:layout_centerHorizontal="true"
         android:singleLine="false"
         android:onClick="btnCreateAccountClick"
         android:background="#ffffff"
         android:textSize="15dp"
-        android:textColor="#a72935" />
+        android:textColor="#a72935"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
-</LinearLayout>
+</RelativeLayout>

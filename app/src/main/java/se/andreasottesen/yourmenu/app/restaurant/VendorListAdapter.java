@@ -12,39 +12,40 @@ import java.util.List;
 import se.andreasottesen.yourmenu.app.R;
 
 /**
- * Created by Andreas on 2014-05-31.
+ * Created by Andreas on 2014-06-14.
  */
-public class ItemListAdapter extends ArrayAdapter<Item> {
+public class VendorListAdapter extends ArrayAdapter<Vendor>{
     private Context context;
-    private List<Item> items;
+    private List<Vendor> vendors;
     private static final int defaultLayout = R.layout.fragment_item_list_item;
 
-    public ItemListAdapter(Context context, List<Item> items){
+    public VendorListAdapter(Context context, List<Vendor> vendors){
         super(context, defaultLayout);
-        this.context = context;
-        this.items = items;
+
+        this.context=context;
+        this.vendors=vendors;
     }
 
     @Override
     public int getCount() {
-        if (items != null){
-            return items.size();
+        if (vendors != null){
+            return vendors.size();
         }
         return 0;
     }
 
     @Override
-    public Item getItem(int position) {
-        if (items != null){
-            return items.get(position);
+    public Vendor getItem(int position) {
+        if (vendors != null){
+            return vendors.get(position);
         }
         return null;
     }
 
     @Override
     public long getItemId(int position) {
-        if (items != null){
-            return items.get(position).hashCode();
+        if (vendors != null){
+            return vendors.get(position).hashCode();
         }
 
         return 0;
@@ -59,19 +60,13 @@ public class ItemListAdapter extends ArrayAdapter<Item> {
             view = inflater.inflate(defaultLayout, null);
         }
 
-        Item currentItem = items.get(position);
+        Vendor currentVendor = vendors.get(position);
 
         TextView textView = (TextView) view.findViewById(R.id.txtItemName);
-        textView.setText(currentItem.name);
+        textView.setText(currentVendor.name);
 
         textView = (TextView) view.findViewById(R.id.txtItemDescription);
-        textView.setText(currentItem.description);
-
-        textView = (TextView) view.findViewById(R.id.txtRestaurantName);
-        textView.setText(currentItem.restaurant);
-
-        textView = (TextView) view.findViewById(R.id.txtPrice);
-        textView.setText(Float.toString(currentItem.price));
+        textView.setText(currentVendor.description);
 
         return view;
     }

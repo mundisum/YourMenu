@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 
+import se.andreasottesen.yourmenu.app.restaurant.Item;
 import se.andreasottesen.yourmenu.app.restaurant.ItemContent;
 
 /**
@@ -26,7 +27,7 @@ public class ItemDetailFragment extends Fragment {
     /**
      * The dummy content this fragment is presenting.
      */
-    private ItemContent.Item mItem;
+    private Item mItem;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the

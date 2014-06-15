@@ -26,7 +26,7 @@ import android.widget.Spinner;
  * to listen for item selections.
  */
 public class ItemListActivity extends FragmentActivity
-        implements ItemListFragment.Callbacks, AdapterView.OnItemSelectedListener {
+        implements ItemListFragment.Callbacks {
 
     /**
      * Whether or not the activity is in two-pane mode, i.e. running on a tablet
@@ -61,21 +61,6 @@ public class ItemListActivity extends FragmentActivity
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.test_location_list, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinLocations.setAdapter(adapter);
-        spinLocations.setOnItemSelectedListener(this);
-    }
-
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        if (position >= 1)
-        {
-            Intent intent = new Intent(parent.getContext(), RestaurantsMapActivity.class);
-            startActivity(intent);
-        }
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> parent) {
-
     }
 
     /**

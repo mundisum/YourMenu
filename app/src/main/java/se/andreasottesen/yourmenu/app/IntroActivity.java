@@ -20,6 +20,8 @@ public class IntroActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intro);
 
+        getActionBar().hide();
+
         btnStartMenu = (Button) findViewById(R.id.btnStartMenu);
         btnCreateAccount = (Button) findViewById(R.id.btnCreateAccount);
 

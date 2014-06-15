@@ -19,13 +19,15 @@ import com.google.android.gms.location.LocationClient;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.maps.*;
-import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.io.IOException;
 import java.util.List;
+
+import se.andreasottesen.yourmenu.app.restaurant.Vendor;
+import se.andreasottesen.yourmenu.app.restaurant.ItemContent;
 
 
 public class RestaurantsMapActivity extends Activity
@@ -187,6 +189,22 @@ public class RestaurantsMapActivity extends Activity
         }
     }
 
+    private void addMarker(LatLng latLng){
+        if (googleMap != null){
+            LatLng currentPosition = latLng;
+
+            googleMap.clear();
+            googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentPosition, 16));
+
+            googleMap.addMarker(new MarkerOptions()
+                            .position(currentPosition)
+                            .title("Marker")
+                            .draggable(true)
+                            .snippet("Lat:" +latLng.latitude + "Long:" + latLng.longitude)
+            );
+        }
+    }
+
     private CharSequence addressToText(Address address) {
         final StringBuilder addressText = new StringBuilder();
         for (int i = 0, max = address.getMaxAddressLineIndex(); i < max; ++i) {
@@ -218,14 +236,16 @@ public class RestaurantsMapActivity extends Activity
         currentLocation = locationClient.getLastLocation();
         Log.d("Location", currentLocation.toString());
 
-        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude()), 16));
+        //googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude()), 16));
+        Vendor v = ItemContent.VENDORS.get(0);
+        addMarker(v.getLatLng());
 
         Geocoder geocoder = new Geocoder(this);
 
         try {
             List<Address> result = geocoder.getFromLocation(currentLocation.getLatitude(), currentLocation.getLongitude(), 1);
             Toast.makeText(this, addressToText(result.get(0)), Toast.LENGTH_LONG).show();
-            addMarker(currentLocation);
+            //addMarker(currentLocation);
 
         } catch (IOException e) {
             e.printStackTrace();
